@@ -1,0 +1,19 @@
+[project]
+name = "general-mgr"
+version = "0.1.0"
+description = "General Sandbox Manager"
+readme = "README.md"
+authors = [
+    { name = "Daniel Chen", email = "danieljnchen@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "aws-lambda-powertools>=3.34.0",
+]
+
+[project.scripts]
+general-mgr = "general_mgr:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
