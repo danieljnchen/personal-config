@@ -8,5 +8,5 @@ sbx create --kit ..\personal-config\docker-sandboxes\kits\general dchen-general-
 
 Set GitHub secret:
 ```
-sbx secret set github --command "pass-cli.exe item view --vault-name Daniel --item-title GitHubSandboxPAT --field Secret"
+sbx secret set github --command "pass-cli.exe item view --vault-name Daniel --item-title GitHubDChenStealthSandboxPAT --field Secret"
 ```
