@@ -1,0 +1,21 @@
+schemaVersion: "2"
+kind: sandbox
+name: dchen-general-kit
+version: v0.0.1
+displayName: DanielGeneralKit
+security:
+  privileged: false
+
+setup:
+  startup:
+    - command: ["chmod", "+x", "$HOME/setup_sbx.sh"]
+    - command: ["bash", "$HOME/setup_sbx.sh"]
+
+sandbox:
+  image: danieljnchen/dchen-general-sbx:v0.0.1
+  entrypoint: ["bash", "/home/agent"]
+
+permissions:
+  network:
+    allow:
+      - lafid.dev
