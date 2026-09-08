@@ -8,12 +8,12 @@ security:
 
 setup:
   startup:
-    - command: ["chmod", "+x", "$HOME/setup_sbx.sh"]
-    - command: ["bash", "$HOME/setup_sbx.sh"]
+    - command: ["chmod", "+x", "/home/agent/setup_sbx.sh"]
+    - command: ["bash", "/home/agent/setup_sbx.sh"]
 
 sandbox:
   image: danieljnchen/dchen-general-sbx:v0.0.1
-  entrypoint: ["bash", "/home/agent"]
+  entrypoint: ["bash", "-c", "cd /home/agent && exec bash"]
 
 permissions:
   network:
