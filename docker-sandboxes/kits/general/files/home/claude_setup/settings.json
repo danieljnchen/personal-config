@@ -1,0 +1,7 @@
+{
+  "tui": "default",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "editorMode": "vim",
+  "autoContinueAtUsageLimit": true
+}
