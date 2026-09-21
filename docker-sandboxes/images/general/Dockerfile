@@ -1,7 +1,7 @@
 FROM docker/sandbox-templates:claude-code
 
 USER root
-RUN apt-get update && apt-get install -y vim tmux
+RUN apt-get update && apt-get install -y vim tmux zip unzip
 
 USER agent
 
