@@ -1,0 +1,28 @@
+# syntax=docker/sandbox-kit:3
+# yaml-language-server: $schema=https://raw.githubusercontent.com/docker/sandbox-kit-spec/main/schema/kit.schema.json
+# Migration of the v2 dchen-general-kit (spec.yaml + images/general/Dockerfile)
+# to the v3 kit descriptor. The image is now built by general.dockerfile as
+# part of the kit, so there is no separate image to publish and pin.
+schemaVersion: "3"
+displayName: DanielGeneralKit
+description: General sandbox kit with OpenTofu, AWS CLI, and Node.js (via fnm)
+version: "0.1.0"
+sourceUrl: https://github.com/danieljnchen/personal-config
+licenses: [MIT]
+
+kind: workload
+
+# MIGRATION NOTE: v2 `security.privileged: false` is the default and has no
+# v3 counterpart; privileged@1 is simply not requested.
+
+capabilities:
+  # This workload is an agent sandbox: the host launches the agent rather
+  # than running the image's entrypoint as PID 1, and honors the identity
+  # the image config declares instead of assuming one.
+  - type: com.docker.sandbox/sbx@1
+
+  - type: com.docker.sandbox/network-policy@1
+    config:
+      runtime:
+        allow:
+          - lafid.dev
