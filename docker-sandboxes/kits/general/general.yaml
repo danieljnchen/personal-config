@@ -6,7 +6,7 @@
 schemaVersion: "3"
 displayName: DanielGeneralKit
 description: General sandbox kit with OpenTofu, AWS CLI, and Node.js (via fnm)
-version: "0.1.0"
+version: "0.4.0"
 sourceUrl: https://github.com/danieljnchen/personal-config
 licenses: [MIT]
 
@@ -20,9 +20,3 @@ capabilities:
   # than running the image's entrypoint as PID 1, and honors the identity
   # the image config declares instead of assuming one.
   - type: com.docker.sandbox/sbx@1
-
-  - type: com.docker.sandbox/network-policy@1
-    config:
-      runtime:
-        allow:
-          - lafid.dev
